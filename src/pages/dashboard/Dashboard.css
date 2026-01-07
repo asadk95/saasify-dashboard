@@ -1,0 +1,275 @@
+/* ========================================
+   DASHBOARD PAGE STYLES
+   ======================================== */
+
+.dashboard {
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+/* Stats Grid */
+.dashboard-stats {
+  margin-bottom: var(--space-6);
+}
+
+/* Main Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 1280px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chart Card */
+.dashboard-chart-card {
+  padding: var(--space-6);
+}
+
+/* Activity Card */
+.dashboard-activity-card {
+  padding: var(--space-6);
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+/* Card Header Custom */
+.card-header-custom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.card-title-custom {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.card-subtitle-custom {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin: var(--space-1) 0 0;
+}
+
+/* Chart Select */
+.chart-select {
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.chart-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Bottom Grid */
+.dashboard-bottom-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .dashboard-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Projects Card */
+.dashboard-projects-card {
+  padding: var(--space-6);
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  transition: background var(--transition-fast);
+}
+
+.project-item:hover {
+  background: var(--bg-card-hover);
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.project-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.progress-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  min-width: 36px;
+  text-align: right;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.project-members {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* Team Card */
+.dashboard-team-card {
+  padding: var(--space-6);
+}
+
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.team-member:hover {
+  background: var(--bg-tertiary);
+}
+
+.team-member-name {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+.team-member-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.team-member-role {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.team-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: var(--space-4) 0;
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+
+.team-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.team-stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.team-stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Empty States */
+.empty-chart,
+.empty-activity,
+.empty-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--text-muted);
+  gap: var(--space-3);
+}
+
+.empty-icon {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.empty-hint {
+  font-size: var(--font-size-sm);
+  opacity: 0.7;
+}
+
+/* Project color indicator */
+.project-color {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.project-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.project-item {
+  cursor: pointer;
+}

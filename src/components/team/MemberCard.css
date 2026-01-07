@@ -1,0 +1,158 @@
+/* ========================================
+   MEMBER CARD COMPONENT STYLES
+   ======================================== */
+
+.member-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.member-card:hover {
+  border-color: var(--border-color-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Header */
+.member-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-4);
+  padding-bottom: 0;
+}
+
+/* Menu */
+.member-card-menu {
+  position: relative;
+}
+
+.member-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--text-muted);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.member-menu-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.member-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 140px;
+  padding: var(--space-1);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.member-card-menu:hover .member-menu-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(4px);
+}
+
+.member-menu-dropdown button {
+  display: block;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.member-menu-dropdown button:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.member-menu-dropdown button.danger {
+  color: var(--error);
+}
+
+.member-menu-dropdown button.danger:hover {
+  background: var(--error-light);
+}
+
+/* Body */
+.member-card-body {
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.member-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1);
+}
+
+.member-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin: 0 0 var(--space-3);
+}
+
+.member-role {
+  display: flex;
+  justify-content: center;
+}
+
+.role-icon {
+  margin-right: var(--space-1);
+}
+
+/* Footer */
+.member-card-footer {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-tertiary);
+  border-top: 1px solid var(--border-color);
+}
+
+.member-stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Status Bar */
+.member-status-bar {
+  height: 3px;
+  background: var(--bg-tertiary);
+  transition: background var(--transition-fast);
+}
+
+.member-status-bar.online {
+  background: var(--gradient-primary);
+}

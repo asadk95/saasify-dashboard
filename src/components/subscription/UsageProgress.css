@@ -1,0 +1,60 @@
+/* ========================================
+   USAGE PROGRESS COMPONENT STYLES
+   ======================================== */
+
+.usage-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.usage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.usage-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.usage-values {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.usage-bar {
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.usage-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.usage-fill.near-limit {
+  background: var(--warning);
+}
+
+.usage-fill.at-limit {
+  background: var(--error);
+}
+
+.usage-warning {
+  font-size: var(--font-size-xs);
+  color: var(--warning);
+  margin: 0;
+}
+
+.usage-error {
+  font-size: var(--font-size-xs);
+  color: var(--error);
+  margin: 0;
+}

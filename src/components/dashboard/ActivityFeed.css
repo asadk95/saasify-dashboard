@@ -1,0 +1,84 @@
+/* ========================================
+   ACTIVITY FEED COMPONENT STYLES
+   ======================================== */
+
+.activity-feed {
+  width: 100%;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-avatar {
+  flex-shrink: 0;
+}
+
+.activity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  font-size: 14px;
+}
+
+.activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+.activity-user {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.activity-target {
+  font-weight: var(--font-weight-medium);
+  color: var(--primary);
+}
+
+.activity-time {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Empty State */
+.activity-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-8);
+  color: var(--text-muted);
+}
+
+.activity-empty-icon {
+  font-size: 32px;
+}
+
+.activity-empty p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+}

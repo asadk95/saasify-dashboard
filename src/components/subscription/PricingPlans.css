@@ -1,0 +1,127 @@
+/* ========================================
+   PRICING PLANS COMPONENT STYLES
+   ======================================== */
+
+.pricing-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .pricing-plans {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Pricing Card */
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-normal);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Popular Card */
+.pricing-card-popular {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.pricing-card-popular::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-xl);
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.pricing-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+}
+
+/* Header */
+.pricing-header {
+  margin-bottom: var(--space-4);
+}
+
+.pricing-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1);
+}
+
+.pricing-description {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Price */
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: var(--space-2);
+}
+
+.pricing-currency {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.pricing-amount {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.pricing-period {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-left: var(--space-1);
+}
+
+.pricing-savings {
+  font-size: var(--font-size-sm);
+  color: var(--success);
+  margin: 0 0 var(--space-4);
+}
+
+/* Features */
+.pricing-features {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.pricing-feature-icon {
+  color: var(--success);
+  flex-shrink: 0;
+}

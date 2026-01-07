@@ -1,0 +1,365 @@
+/* ========================================
+   BILLING PAGE STYLES
+   ======================================== */
+
+.billing-page {
+  animation: fadeIn var(--transition-normal) ease;
+}
+
+/* Current Plan */
+.billing-current-plan {
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.plan-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .plan-info {
+    flex-direction: column;
+  }
+}
+
+.plan-details {
+  flex: 1;
+}
+
+.plan-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.plan-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.plan-price {
+  font-size: var(--font-size-2xl);
+  margin: 0 0 var(--space-2);
+}
+
+.plan-amount {
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.plan-cycle {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+.plan-next-billing {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.plan-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* Upgrade Section */
+.billing-upgrade {
+  margin-bottom: var(--space-6);
+}
+
+.billing-cycle-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  color: var(--text-muted);
+}
+
+.billing-cycle-toggle span.active {
+  color: var(--text-primary);
+}
+
+.cycle-toggle {
+  width: 44px;
+  height: 24px;
+  padding: 2px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.cycle-toggle.active {
+  background: var(--primary);
+}
+
+.toggle-dot {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-fast);
+}
+
+.cycle-toggle.active .toggle-dot {
+  transform: translateX(20px);
+}
+
+/* Grid */
+.billing-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+  .billing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Usage */
+.billing-usage {
+  padding: var(--space-6);
+}
+
+.usage-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+/* Payment */
+.billing-payment {
+  padding: var(--space-6);
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  margin: var(--space-4) 0;
+}
+
+.payment-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md);
+  color: white;
+}
+
+.payment-card-details {
+  flex: 1;
+}
+
+.payment-card-number {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.payment-card-expiry {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin: var(--space-1) 0 0;
+}
+
+/* Bank Transfer Style */
+.payment-card.default {
+  border: 1px solid var(--success);
+  background: rgba(34, 197, 94, 0.05);
+}
+
+.payment-card-icon.bank {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* Stripe Style */
+.payment-card.optional {
+  border: 1px dashed var(--border-color);
+  background: transparent;
+}
+
+.payment-card-icon.stripe {
+  background: linear-gradient(135deg, #635bff, #7c3aed);
+}
+
+/* Invoices */
+.billing-invoices {
+  padding: var(--space-6);
+}
+
+.invoices-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.invoices-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.invoices-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 100px;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.invoices-row:last-child {
+  border-bottom: none;
+}
+
+.invoices-header-row {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.invoice-id {
+  font-weight: var(--font-weight-medium);
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .invoices-row {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+  }
+
+  .invoices-header-row {
+    display: none;
+  }
+}
+
+/* Payment Actions */
+.payment-actions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+/* Bank Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-xl);
+  max-width: 480px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.bank-modal {
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h2 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: var(--space-6);
+}
+
+.bank-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.bank-disclaimer {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--border-color);
+}

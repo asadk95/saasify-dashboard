@@ -1,0 +1,135 @@
+/* ========================================
+   CARD COMPONENT STYLES
+   ======================================== */
+
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+/* Variants */
+.card-default {
+  background: var(--bg-card);
+}
+
+.card-solid {
+  background: var(--bg-tertiary);
+  backdrop-filter: none;
+}
+
+.card-gradient {
+  background: var(--gradient-card);
+}
+
+.card-outlined {
+  background: transparent;
+  border: 1px solid var(--border-color-light);
+}
+
+/* Padding */
+.card-padding-none .card-body {
+  padding: 0;
+}
+
+.card-padding-sm .card-body {
+  padding: var(--space-4);
+}
+
+.card-padding-md .card-body {
+  padding: var(--space-6);
+}
+
+.card-padding-lg .card-body {
+  padding: var(--space-8);
+}
+
+/* Header */
+.card-header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--border-color);
+  font-weight: var(--font-weight-semibold);
+}
+
+.card-padding-sm .card-header {
+  padding: var(--space-3) var(--space-4);
+}
+
+.card-padding-lg .card-header {
+  padding: var(--space-5) var(--space-8);
+}
+
+/* Footer */
+.card-footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.card-padding-sm .card-footer {
+  padding: var(--space-3) var(--space-4);
+}
+
+.card-padding-lg .card-footer {
+  padding: var(--space-5) var(--space-8);
+}
+
+/* Hover Effect */
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-color-light);
+}
+
+/* Glow Effect */
+.card-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+}
+
+/* Clickable */
+.card-clickable {
+  cursor: pointer;
+}
+
+/* Card with stats */
+.card-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.card-stat-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.card-stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.card-stat-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.card-stat-trend.positive {
+  color: var(--success);
+}
+
+.card-stat-trend.negative {
+  color: var(--error);
+}

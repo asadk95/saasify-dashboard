@@ -1,0 +1,135 @@
+/* ========================================
+   INVITE MEMBER MODAL STYLES
+   ======================================== */
+
+.invite-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.invite-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* Email Input */
+.invite-email-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.invite-email-input {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.invite-email-input .input-wrapper {
+  flex: 1;
+}
+
+.invite-email-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.email-tag-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--space-1);
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.email-tag-remove:hover {
+  opacity: 1;
+}
+
+/* Role Selection */
+.invite-role-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.invite-roles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.invite-role-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg-tertiary);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.invite-role-option:hover {
+  background: var(--bg-card-hover);
+}
+
+.invite-role-option.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.invite-role-option .role-icon {
+  font-size: 20px;
+}
+
+.role-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.role-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.role-description {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.role-check {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--primary);
+}
+
+/* Info */
+.invite-info {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+/* Footer */
+.invite-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}

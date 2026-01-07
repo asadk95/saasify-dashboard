@@ -1,0 +1,123 @@
+/* ========================================
+   STATS CARD COMPONENT STYLES
+   ======================================== */
+
+.stats-card {
+  padding: var(--space-5);
+}
+
+.stats-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.stats-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+}
+
+.stats-card-icon-primary {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.stats-card-icon-secondary {
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--secondary);
+}
+
+.stats-card-icon-accent {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.stats-card-icon-success {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.stats-card-icon-warning {
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+.stats-card-change {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.stats-card-change.positive {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.stats-card-change.negative {
+  background: var(--error-light);
+  color: var(--error);
+}
+
+.stats-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.stats-card-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1;
+}
+
+.stats-card-title {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.stats-card-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin: var(--space-2) 0 0;
+}
+
+/* Loading State */
+.stats-card-loading {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.stats-skeleton-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+}
+
+.stats-skeleton-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stats-skeleton-value {
+  width: 60%;
+  height: 28px;
+}
+
+.stats-skeleton-label {
+  width: 40%;
+  height: 16px;
+}
