@@ -9,7 +9,8 @@ import {
   HelpCircle,
   ChevronLeft,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  X
 } from 'lucide-react';
 import Avatar from '../common/Avatar';
 import './Sidebar.css';
@@ -27,11 +28,18 @@ const bottomNavItems = [
   { icon: HelpCircle, label: 'Help', path: '/help' },
 ];
 
-export default function Sidebar({ collapsed, onToggle, user }) {
+export default function Sidebar({ collapsed, onToggle, user, isOpen, onClose }) {
   const location = useLocation();
 
+  // Close sidebar when navigating on mobile
+  const handleNavClick = () => {
+    if (isOpen && onClose) {
+      onClose();
+    }
+  };
+
   return (
-    <aside className={`sidebar ${collapsed ? 'sidebar-collapsed' : ''}`}>
+    <aside className={`sidebar ${collapsed ? 'sidebar-collapsed' : ''} ${isOpen ? 'sidebar-open' : ''}`}>
       {/* Logo */}
       <div className="sidebar-header">
         <div className="sidebar-logo">
@@ -40,12 +48,23 @@ export default function Sidebar({ collapsed, onToggle, user }) {
           </div>
           {!collapsed && <span className="sidebar-logo-text">SaaSify</span>}
         </div>
+
+        {/* Desktop collapse toggle */}
         <button
-          className="sidebar-toggle"
+          className="sidebar-toggle desktop-only"
           onClick={onToggle}
           aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
           {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+        </button>
+
+        {/* Mobile close button */}
+        <button
+          className="sidebar-close mobile-only"
+          onClick={onClose}
+          aria-label="Close sidebar"
+        >
+          <X size={20} />
         </button>
       </div>
 
@@ -59,6 +78,7 @@ export default function Sidebar({ collapsed, onToggle, user }) {
                 className={({ isActive }) =>
                   `sidebar-nav-item ${isActive ? 'active' : ''}`
                 }
+                onClick={handleNavClick}
               >
                 <item.icon className="sidebar-nav-icon" size={20} />
                 {!collapsed && <span className="sidebar-nav-label">{item.label}</span>}
@@ -78,6 +98,7 @@ export default function Sidebar({ collapsed, onToggle, user }) {
                 className={({ isActive }) =>
                   `sidebar-nav-item ${isActive ? 'active' : ''}`
                 }
+                onClick={handleNavClick}
               >
                 <item.icon className="sidebar-nav-icon" size={20} />
                 {!collapsed && <span className="sidebar-nav-label">{item.label}</span>}

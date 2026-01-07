@@ -128,3 +128,44 @@
     padding: calc(var(--header-height) + var(--space-4)) var(--space-4) var(--space-4);
   }
 }
+
+/* Mobile Overlay */
+.sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: calc(var(--z-sticky) - 1);
+    animation: fadeIn 0.2s ease;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .page-content {
+    padding: calc(var(--header-height) + var(--space-3)) var(--space-3) var(--space-3);
+  }
+
+  .page-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-header-right {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
