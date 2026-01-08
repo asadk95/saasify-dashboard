@@ -119,7 +119,7 @@ export const deleteProject = async (id) => {
 export const fetchTasks = async (projectId) => {
   const { data, error } = await supabase
     .from('tasks')
-    .select('*, assignees:task_assignees(user_id, profiles(name, avatar_url))')
+    .select('*')
     .eq('project_id', projectId)
     .order('created_at', { ascending: false });
   return { data, error };
