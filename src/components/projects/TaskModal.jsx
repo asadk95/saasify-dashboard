@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Calendar, Users, Tag, Flag, Paperclip, MessageSquare } from 'lucide-react';
 import { Modal, Button, Input, Avatar, Badge, ConfirmModal } from '../common';
 import toast from 'react-hot-toast';
@@ -21,8 +21,23 @@ export default function TaskModal({
     tags: task?.tags || [],
   });
 
+  // Update formData when task prop changes (e.g., opening modal for different task)
+  useEffect(() => {
+    if (task) {
+      setFormData({
+        title: task.title || '',
+        description: task.description || '',
+        priority: task.priority || 'medium',
+        due_date: task.due_date || '',
+        status: task.status || 'todo',
+        tags: task.tags || [],
+      });
+    }
+  }, [task]);
+
   const [newTag, setNewTag] = useState('');
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
 
   const handleDeleteClick = () => {
     setShowDeleteConfirm(true);
