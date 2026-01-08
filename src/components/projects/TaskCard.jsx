@@ -16,6 +16,43 @@ const priorityLabels = {
   urgent: 'Urgent'
 };
 
+// Helper function to get due date status
+function getDueDateStatus(dueDate) {
+  if (!dueDate) return null;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const due = new Date(dueDate);
+  due.setHours(0, 0, 0, 0);
+
+  const diffTime = due.getTime() - today.getTime();
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  if (diffDays < 0) return 'overdue';
+  if (diffDays === 0) return 'today';
+  if (diffDays <= 3) return 'soon';
+  return 'future';
+}
+
+// Format due date nicely
+function formatDueDate(dueDate) {
+  if (!dueDate) return null;
+
+  const status = getDueDateStatus(dueDate);
+  const date = new Date(dueDate);
+
+  if (status === 'today') return 'Today';
+  if (status === 'overdue') {
+    const today = new Date();
+    const diffDays = Math.ceil((today - date) / (1000 * 60 * 60 * 24));
+    if (diffDays === 1) return 'Yesterday';
+    return `${diffDays} days ago`;
+  }
+
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
 export default function TaskCard({
   task,
   onDragStart,
@@ -35,7 +72,8 @@ export default function TaskCard({
     cover
   } = task;
 
-  const isOverdue = due_date && new Date(due_date) < new Date();
+  const dueStatus = getDueDateStatus(due_date);
+  const formattedDue = formatDueDate(due_date);
 
   return (
     <div
@@ -76,9 +114,9 @@ export default function TaskCard({
         <div className="task-footer">
           <div className="task-info">
             {due_date && (
-              <span className={`task-due ${isOverdue ? 'overdue' : ''}`}>
-                <Calendar size={12} />
-                {new Date(due_date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+              <span className={`task-due ${dueStatus}`}>
+                {dueStatus === 'today' ? <Clock size={12} /> : <Calendar size={12} />}
+                {formattedDue}
               </span>
             )}
             {commentsCount > 0 && (

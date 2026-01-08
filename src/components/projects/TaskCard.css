@@ -97,6 +97,17 @@
 
 .task-due.overdue {
   color: var(--error);
+  font-weight: var(--font-weight-medium);
+}
+
+.task-due.today {
+  color: var(--primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.task-due.soon {
+  color: var(--warning);
+  font-weight: var(--font-weight-medium);
 }
 
 /* Drag Placeholder */
