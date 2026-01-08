@@ -12,12 +12,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--space-6);
-  background: rgba(10, 10, 18, 0.8);
+  background: var(--bg-sidebar);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   z-index: var(--z-sticky);
-  transition: left var(--transition-normal);
+  transition: left var(--transition-normal), background var(--transition-normal);
 }
 
 .sidebar-collapsed~.main-content .header,
