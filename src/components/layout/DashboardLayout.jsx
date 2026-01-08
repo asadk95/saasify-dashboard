@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Header from './Header';
+import { OnboardingTour } from '../onboarding';
 import { useAuthStore } from '../../stores';
 import './DashboardLayout.css';
 
@@ -62,6 +63,9 @@ export default function DashboardLayout() {
 
   return (
     <div className={`dashboard-layout ${sidebarCollapsed ? 'sidebar-collapsed' : ''} ${sidebarOpen ? 'sidebar-mobile-open' : ''}`} data-theme={theme}>
+      {/* Onboarding Tour */}
+      <OnboardingTour theme={theme} />
+
       {/* Background Effects */}
       <div className="app-background" />
 
@@ -96,3 +100,4 @@ export default function DashboardLayout() {
     </div>
   );
 }
+
