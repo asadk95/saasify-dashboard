@@ -13,6 +13,13 @@ export const isSupabaseConfigured =
   supabaseUrl !== 'https://your-project.supabase.co' &&
   supabaseAnonKey !== 'your-anon-key';
 
+// Debug log for production troubleshooting
+console.log('[Supabase] Config status:', {
+  isConfigured: isSupabaseConfigured,
+  urlSet: !!import.meta.env.VITE_SUPABASE_URL,
+  keySet: !!import.meta.env.VITE_SUPABASE_ANON_KEY,
+});
+
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: true,
