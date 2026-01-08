@@ -83,12 +83,15 @@ export const useTaskStore = create(
 
       // Fetch tasks for a project
       fetchTasks: async (projectId) => {
+        console.log('[TaskStore] Fetching tasks for project:', projectId);
         set({ isLoading: true, error: null });
 
         if (isSupabaseConfigured) {
           const { data, error } = await supabaseFetchTasks(projectId);
+          console.log('[TaskStore] Supabase response:', { data, error });
 
           if (error) {
+            console.error('[TaskStore] Error fetching tasks:', error);
             set({ error: error.message, isLoading: false });
             return { success: false, error: error.message };
           }
@@ -105,6 +108,7 @@ export const useTaskStore = create(
           return { success: true, tasks: projectTasks };
         }
       },
+
 
       // Add task
       addTask: async (taskData) => {
