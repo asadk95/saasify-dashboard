@@ -158,15 +158,12 @@ export default function Projects() {
 
   // Fetch projects on mount
   useEffect(() => {
-    console.log('[Projects] Fetching projects on mount');
     fetchProjects();
   }, [fetchProjects]);
 
   // Fetch tasks when current project changes
   useEffect(() => {
-    console.log('[Projects] Current project changed:', currentProject?.id, currentProject?.name);
     if (currentProject?.id) {
-      console.log('[Projects] Calling fetchTasks for project:', currentProject.id);
       fetchTasks(currentProject.id);
     }
   }, [currentProject?.id, fetchTasks]);
